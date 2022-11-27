@@ -56,12 +56,29 @@ button:hover {
   color: #c66900;
 }
 
-input::placeholder {
-  color: transparent;
-}
-
 input:focus {
   border-bottom: 1px solid #fa911a;
   box-shadow: 0 1px 0 0 #fa911a;
   outline: 1px solid transparent;
+}
+
+input:focus + label {
+  transform: translateY(-14px) scale(0.8);
+}
+
+input::-webkit-input-placeholder,
+input::-moz-input-placeholder {
+  color: transparent;
+}
+
+input::placeholder {
+  color: transparent;
+}
+
+input:not(:placeholder-shown) {
+  border-bottom: 1px solid #9e9e9e;
+}
+
+input:not(:placeholder-shown) + label {
+  transform: translateY(-14px) scale(0.8);
 }
